@@ -17,17 +17,12 @@ views/hoi.ejs | あっち向いてホイのテンプレートファイル
 views/lottery.ejs | くじ引きのテンプレートファイル
 README.md | app5.js全体のドキュメント
 
-```javascript
-console.log('Hello');
-```
+
 ## 起動方法
 
 1. webpro_06のディレクトリにcdコマンドで移動しターミナルで
-```javascript
-node app5.js
-```
-と記述し起動する．
-1. Webブラウザでlocalhost:8080/public/janken.htmlにアクセスする．あっち向いてホイとくじ引きをしたい場合はlocalhost:8080/public/janken.htmlのjankenの部分をhoiかlotteryに変更することで起動できる．
+```node app5.js```と記述し起動する．
+1. Webブラウザで```localhost:8080/public/janken.html```にアクセスする．あっち向いてホイとくじ引きをしたい場合は```localhost:8080/public/janken.html```の```janken```の部分を```hoi```か```lottery```に変更することで起動できる．
 ## 動作手順
 
 **ジャンケン場合**「何を出す？」と聞かれているのでグー，チョキ，パーの中から一つ記述し，送信を押す
