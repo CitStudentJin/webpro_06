@@ -21,6 +21,7 @@ README.md | app5.js全体のドキュメント
 console.log('Hello');
 ```
 ## 起動方法
+
 1. webpro_06のディレクトリにcdコマンドで移動しターミナルで
 ```javascript
 node app5.js
@@ -28,6 +29,7 @@ node app5.js
 と記述し起動する．
 1. Webブラウザでlocalhost:8080/public/janken.htmlにアクセスする．あっち向いてホイとくじ引きをしたい場合はlocalhost:8080/public/janken.htmlのjankenの部分をhoiかlotteryに変更することで起動できる．
 ## 動作手順
+
 **ジャンケン場合**「何を出す？」と聞かれているのでグー，チョキ，パーの中から一つ記述し，送信を押す
 **あっち向いてホイの場合**「何を出す？」と聞かれているので，上，下，右，左の中から一つ記述し，送信を押す．
 **くじ引きの場合**「色を選択:」と書かれているので赤，青，緑，黄色の中から一つ選び，くじを引くを押す．
@@ -37,6 +39,7 @@ node app5.js
 ## 図の描画
 
 ## hello1
+
 ```mermaid
 flowchart TD;
 
@@ -45,9 +48,11 @@ getMessages --> renderHello1["show テンプレートに渡してレンダリン
 renderHello1 --> end1["終了"]
 ```
 ###　詳細説明
- 動的に定義された2つのメッセージ (Hello world, Bon jour) を show テンプレートに渡して表示する
+
+動的に定義された2つのメッセージ (Hello world, Bon jour) を show テンプレートに渡して表示する
 
 ## hello2
+
 ```mermaid
 flowchart TD;
 
@@ -55,9 +60,11 @@ start2["開始"] --> renderHello2["固定メッセージを show テンプレー
 renderHello2 --> end2["終了"]
 ```
 ###　詳細説明
+
 固定のメッセージ (Hello world, Bon jour) を show テンプレートに渡して表示する
 
 ## icon
+
 ```mermaid
 flowchart TD;
 
@@ -66,9 +73,11 @@ defineIcon --> renderIcon["icon テンプレートでレンダリング"]
 renderIcon --> end3["終了"]
 ```
 ### 詳細説明
+
 Appleのロゴ画像ファイル (./public/Apple_logo_black.svg)とaltテキストをiconテンプレートに渡して表示する
 
 ## luck
+
 ```mermaid
 flowchart TD;
 
@@ -79,9 +88,11 @@ logLuck --> renderLuck["luck テンプレートで結果を表示"]
 renderLuck --> end4["終了"]
 ```
 ### 詳細説明
+
 サイコロを振るような形で1～6の数字をランダムに生成し，その結果に応じて運勢 (大吉, 中吉, など) を表示する
 
 ## ジャンケン
+
 ```mermaid
 flowchart TD;
 
@@ -103,13 +114,15 @@ if -->|判定| loose
 loose --> end1
 ```
 ### 詳細説明
+
 1. **開始**:処理の開始を示している(勝負の開始)
 1. **text**:「グー」「チョキ」「パー」の一つを入力
 1. **条件に合うか**:ユーザーとCPUのじゃんけんの手を比較して条件判定を行う
 1. **結果**:条件を満たした場合は「勝ち」，それ以外の判定はCPUと同じ手なら「引き分け」，「勝ち」「引き分け」のどれにも当てはまらない条件なら負けとなる
 1. **終了**:CPUに「勝ち」「負け」「引き分け」のどれかになり処理が終了する
 
-## **あっち向いてホイ**
+## あっち向いてホイ
+
 ```mermaid
 flowchart TD;
 
@@ -137,6 +150,7 @@ draw --> end1
 1. **終了**:CPUと向きがあったら「勝ち」となり処理を終了する
 
 ## くじ引き
+
 ```mermaid
 flowchart TD;
 
@@ -157,6 +171,7 @@ if -->|不一致| draw;
 draw -->|当たるまで| cpu;
 ```
 ### 詳細説明
+
 1. **開始**:処理の開始(くじ引きの開始)
 1. **ユーザーの選択**:ユーザーが「赤」「青」「緑」「黄色」の中から色を選ぶ
 1. **CPUのランダム選択**:CPUがランダムで1つの色（赤，青，緑，黄色）を選ぶ
