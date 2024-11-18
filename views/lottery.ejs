@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>くじ引きゲーム</title>
+</head>
+<body>
+  <h1>くじ引きゲーム</h1>
+  <p>あなたの選択: <%= yourChoice %></p>
+  <p>くじの結果: <%= lotteryResult %></p>
+  <p>判定: <%= judgement %></p>
+  <p>当たり回数: <%= win %></p>
+  <p>試行回数: <%= total %></p>
+  <p>勝率: <%= winRate %></p>
+
+  <form action="/lottery" method="get">
+    <label for="choice">色を選択:</label>
+    <select name="choice" id="choice">
+      <option value="赤">赤</option>
+      <option value="青">青</option>
+      <option value="緑">緑</option>
+      <option value="黄色">黄色</option>
+    </select>
+    <input type="hidden" name="win" value="<%= win %>">
+    <input type="hidden" name="total" value="<%= total %>">
+    <button type="submit">くじを引く</button>
+  </form>
+</body>
+</html>
