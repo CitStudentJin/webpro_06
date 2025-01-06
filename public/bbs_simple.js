@@ -1,17 +1,19 @@
 "use strict";
 
-// 📌 シンプル投稿機能
 document.querySelector('#send').addEventListener('click', () => {
     const name = document.querySelector('#name').value;
     const message = document.querySelector('#message').value;
 
-    if (name && message) {
-        const newMessage = document.createElement('div');
-        newMessage.textContent = `${name}: ${message}`;
-        document.querySelector('#bbs').appendChild(newMessage);
-
-        // 入力フィールドをクリア
-        document.querySelector('#name').value = '';
-        document.querySelector('#message').value = '';
-    }
+    fetch('/post-simple', {
+        method: "POST",
+        body: `name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}`,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const bbs = document.querySelector('#bbs');
+        const post = document.createElement('div');
+        post.textContent = `${data.name}: ${data.message}`;
+        bbs.appendChild(post);
+    });
 });
